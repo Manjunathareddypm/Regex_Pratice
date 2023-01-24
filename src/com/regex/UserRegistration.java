@@ -53,6 +53,13 @@ public class UserRegistration {
         System.out.println(Pattern.matches("^((?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,})$", password));
     }
 
+    public static void checkAtLeastPasswordShouldHaveOneSpecialChar() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your password ");
+        String password = sc.nextLine();
+        System.out.println(Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$", password));
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Regex");
         checkValidFirstName();
@@ -62,5 +69,6 @@ public class UserRegistration {
         checkValidPasswordEightDigit();
         checkPasswordAtLeastOneCharShouldCapital();
         checkAtLeastPasswordShouldHaveOneDigit();
+        checkAtLeastPasswordShouldHaveOneSpecialChar();
     }
 }
