@@ -46,6 +46,13 @@ public class UserRegistration {
         System.out.println(Pattern.matches("^([A-Za-z0-9]{8,})$", password));
     }
 
+    public static void checkAtLeastPasswordShouldHaveOneDigit() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your password ");
+        String password = sc.nextLine();
+        System.out.println(Pattern.matches("^((?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,})$", password));
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Regex");
         checkValidFirstName();
@@ -54,5 +61,6 @@ public class UserRegistration {
         checkValidMobileNo();
         checkValidPasswordEightDigit();
         checkPasswordAtLeastOneCharShouldCapital();
+        checkAtLeastPasswordShouldHaveOneDigit();
     }
 }
