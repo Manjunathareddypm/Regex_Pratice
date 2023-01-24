@@ -32,11 +32,19 @@ public class UserRegistration {
         System.out.println(Pattern.matches("^([+][0-9]{2}[ ][1-9]{1}[0-9]{9})$", mobileNo));
     }
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to Regex");
-        checkValidFirstName();
-        checkValidLastName();
-        checkValidEmailId();
-        checkValidMobileNo();
+    public static void checkValidPasswordEightDigit() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your password ");
+        String password = sc.nextLine();
+        System.out.println(Pattern.matches("^([A-Za-z0-9]{8,})$", password));
     }
-}
+
+        public static void main (String[]args){
+            System.out.println("Welcome to Regex");
+            checkValidFirstName();
+            checkValidLastName();
+            checkValidEmailId();
+            checkValidMobileNo();
+            checkValidPasswordEightDigit();
+        }
+    }
