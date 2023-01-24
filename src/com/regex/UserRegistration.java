@@ -25,10 +25,18 @@ public class UserRegistration {
         System.out.println(Pattern.matches("^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$", emailID));
     }
 
+    private static void checkValidMobileNo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your mobile number ");
+        String mobileNo = sc.nextLine();
+        System.out.println(Pattern.matches("^([+][0-9]{2}[ ][1-9]{1}[0-9]{9})$", mobileNo));
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Regex");
         checkValidFirstName();
         checkValidLastName();
         checkValidEmailId();
+        checkValidMobileNo();
     }
 }
